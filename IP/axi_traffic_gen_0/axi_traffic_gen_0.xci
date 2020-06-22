@@ -326,7 +326,7 @@
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_ATG_SYSTEM_INIT_MASK_MIF">axi_traffic_gen_0_mask.mem</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_ATG_SYSTEM_MAX_CHANNELS">&quot;00000000000000000000000000000001&quot;</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_ATG_SYSTEM_TEST">0</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_ATG_SYSTEM_TEST_MAX_CLKS">5000</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_ATG_SYSTEM_TEST_MAX_CLKS">500000</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_AXIS1_HAS_TKEEP">1</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_AXIS1_HAS_TSTRB">1</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_AXIS2_HAS_TKEEP">0</spirit:configurableElementValue>
@@ -409,7 +409,7 @@
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.C_ATG_SYSTEM_INIT_DATA_MIF">../../atg-coe-files/data.coe</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.C_ATG_SYSTEM_INIT_MASK_MIF">no_coe_file_loaded</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.C_ATG_SYSTEM_MAX_CHANNELS">1</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.C_ATG_SYSTEM_TEST_MAX_CLKS">5000</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.C_ATG_SYSTEM_TEST_MAX_CLKS">500000</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.C_AXIS1_HAS_TKEEP">true</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.C_AXIS1_HAS_TSTRB">true</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.C_AXIS2_HAS_TKEEP">true</spirit:configurableElementValue>
@@ -623,8 +623,10 @@
             <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXIS_SLAVE.HAS_TREADY" xilinx:valueSource="auto"/>
             <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXIS_SLAVE.TDATA_NUM_BYTES" xilinx:valueSource="auto"/>
             <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_ATG_MODE" xilinx:valueSource="user"/>
+            <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_ATG_SYSTEM_CMD_MAX_RETRY" xilinx:valueSource="user"/>
             <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_ATG_SYSTEM_INIT_ADDR_MIF" xilinx:valueSource="user"/>
             <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_ATG_SYSTEM_INIT_DATA_MIF" xilinx:valueSource="user"/>
+            <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_ATG_SYSTEM_TEST_MAX_CLKS" xilinx:valueSource="user"/>
           </xilinx:configElementInfos>
         </xilinx:componentInstanceExtensions>
       </spirit:vendorExtensions>
