@@ -13,4 +13,6 @@ module fpga_ip_example_tb();
         osc_300_n = 1'b0;
         #(osc_300_period / 2);
     end
+
+    fpga_ip_example fpga_ip_example(osc_300_p, osc_300_n);
 endmodule
