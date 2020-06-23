@@ -4,6 +4,7 @@ module fpga_ip_example
     (
         input clk_in1_p,
         input clk_in1_n,
+        input reset,
         output [7:0]gpio_io_o
     );
 
@@ -31,6 +32,7 @@ module fpga_ip_example
         // Clock out ports
         .clk_out1(clk_out1),      // output clk_out1
         // Status and control signals
+        .reset(reset),            // input reset
         .locked(locked),          // output locked
         // Clock in ports
         .clk_in1_p(clk_in1_p),    // input clk_in1_p

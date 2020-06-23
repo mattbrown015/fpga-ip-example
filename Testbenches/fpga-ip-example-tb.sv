@@ -5,7 +5,14 @@ module fpga_ip_example_tb();
 
     logic osc_300_p;
     logic osc_300_n;
+    logic reset;
     logic [7:0]gpio_io_o;
+
+    initial
+    begin
+        reset = 1;
+        #10 reset = 0;
+    end
 
     always
     begin
@@ -20,6 +27,7 @@ module fpga_ip_example_tb();
     (
         osc_300_p,
         osc_300_n,
+        reset,
         gpio_io_o
     );
 endmodule
