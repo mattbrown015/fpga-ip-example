@@ -6,7 +6,8 @@ module fpga_ip_example(
     output [7:0]gpio_io_o
     );
 
-    logic s_axi_aresetn = 1;
+    logic locked;
+
     logic [31:0]m_axi_lite_ch1_awaddr;
     logic [2:0]m_axi_lite_ch1_awprot;
     logic m_axi_lite_ch1_awvalid;
@@ -28,6 +29,8 @@ module fpga_ip_example(
     (
         // Clock out ports
         .clk_out1(clk_out1),      // output clk_out1
+        // Status and control signals
+        .locked(locked),          // output locked
         // Clock in ports
         .clk_in1_p(clk_in1_p),    // input clk_in1_p
         .clk_in1_n(clk_in1_n)     // input clk_in1_n
@@ -36,7 +39,7 @@ module fpga_ip_example(
     axi_traffic_gen_0 axi_traffic_gen_0
     (
         .s_axi_aclk(clk_out1),                            // input wire s_axi_aclk
-        .s_axi_aresetn(s_axi_aresetn),                    // input wire s_axi_aresetn
+        .s_axi_aresetn(locked),                           // input wire s_axi_aresetn
         .m_axi_lite_ch1_awaddr(m_axi_lite_ch1_awaddr),    // output wire [31 : 0] m_axi_lite_ch1_awaddr
         .m_axi_lite_ch1_awprot(m_axi_lite_ch1_awprot),    // output wire [2 : 0] m_axi_lite_ch1_awprot
         .m_axi_lite_ch1_awvalid(m_axi_lite_ch1_awvalid),  // output wire m_axi_lite_ch1_awvalid
@@ -55,7 +58,7 @@ module fpga_ip_example(
     axi_gpio_0 axi_gpio_0
     (
         .s_axi_aclk(clk_out1),                   // input wire s_axi_aclk
-        .s_axi_aresetn(s_axi_aresetn),           // input wire s_axi_aresetn
+        .s_axi_aresetn(locked),                  // input wire s_axi_aresetn
         .s_axi_awaddr(m_axi_lite_ch1_awaddr),    // input wire [8 : 0] s_axi_awaddr
         .s_axi_awvalid(m_axi_lite_ch1_awvalid),  // input wire s_axi_awvalid
         .s_axi_awready(m_axi_lite_ch1_awready),  // output wire s_axi_awready
