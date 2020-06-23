@@ -1,9 +1,10 @@
 `timescale 1ns / 1ps
 
-module fpga_ip_example(
-    input clk_in1_p,
-    input clk_in1_n,
-    output [7:0]gpio_io_o
+module fpga_ip_example
+    (
+        input clk_in1_p,
+        input clk_in1_n,
+        output [7:0]gpio_io_o
     );
 
     logic locked;
