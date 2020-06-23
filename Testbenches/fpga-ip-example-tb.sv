@@ -11,7 +11,8 @@ module fpga_ip_example_tb();
     initial
     begin
         reset = 1;
-        #10 reset = 0;
+        #10
+        reset = 0;
     end
 
     always
