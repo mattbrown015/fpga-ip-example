@@ -7,7 +7,8 @@ module fpga_ip_example_tb();
     logic osc_300_n;
     logic [7:0]gpio_io_o;
 
-    always begin
+    always
+    begin
         osc_300_p = 1'b0;
         osc_300_n = 1'b1;
         #(osc_300_period / 2) osc_300_p = 1'b1;
