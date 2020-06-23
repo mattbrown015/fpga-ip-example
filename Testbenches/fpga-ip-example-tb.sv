@@ -10,9 +10,52 @@ module fpga_ip_example_tb();
 
     initial
     begin
+        $display ("fpga_ip_example_tb start");
+
         reset = 1;
-        #10ns
+        #10ns  // arbitrary delay to get started
+
+        $display ("release reset and check GPIO reset");
         reset = 0;
+
+        if (gpio_io_o != 'h00)
+        begin
+            $display ("gpio_io_o != 'h00");
+        end
+
+        $display ("allow ATG to write to GPIO");
+        #220
+        if (gpio_io_o != 'h01)
+        begin
+            $display ("gpio_io_o != 'h01");
+        end
+
+        $display ("Assert and release reset and check GPIO reset");
+        #1
+        reset = 1;
+        #1
+        reset = 0;
+
+        #100
+        if (gpio_io_o != 'h00)
+        begin
+            $display ("gpio_io_o != 'h00");
+        end
+
+        $display ("allow STG to write more values to GPIO");
+        #100
+        if (gpio_io_o != 'h01)
+        begin
+            $display ("gpio_io_o != 'h01");
+        end
+
+        #100
+        if (gpio_io_o != 'h02)
+        begin
+            $display ("gpio_io_o != 'h02");
+        end
+
+        $display ("fpga_ip_example_tb finish");
     end
 
     always
